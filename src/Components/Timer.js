@@ -1,10 +1,13 @@
 import React from 'react'
-
+import { Progress } from 'antd';
+import { TimerType } from './Constants'
 // expects onTimerFinishe, duration in sec
 
 export default class Timer extends React.Component {
   constructor(props) {
     super(props)
+
+    this.initialDuration = this.props.duration
     this.state = {
       duration: this.props.duration,
     }
@@ -20,12 +23,6 @@ export default class Timer extends React.Component {
     clearInterval(this.timerId)
   }
 
-  formatDurationIntoMinutes(numberOfSecs) {
-    const minutes = Math.floor(numberOfSecs / 60)
-    const seconds = numberOfSecs % 60
-    return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds
-  }
-
   tick() {
     this.setState((state) => ({
       duration: state.duration - 1
@@ -37,11 +34,48 @@ export default class Timer extends React.Component {
     });
   }
 
-
   render() {
-    const {duration} = this.state
+    const { duration } = this.state
+    const { timerType } = this.props
+
+    console.log(duration)
     return (
-      <span>{duration === 0 ? <span>Busted!</span>  : this.formatDurationIntoMinutes(duration)}</span>
+      (timerType === TimerType.circular) ?
+        <CircularCountDown
+          duration={duration}
+          initialDuration={this.initialDuration} /> :
+        <NormalCountDown
+          duration={duration} />
     )
   }
 }
+
+
+function CircularCountDown(props) {
+  const { duration, initialDuration } = props
+
+  console.log(duration, initialDuration)
+  return (
+    <Progress 
+    type="circle" 
+    percent={(initialDuration - duration) / initialDuration * 100} 
+    format = {() => duration}
+    width = "200px"
+    />
+  )
+}
+
+function NormalCountDown(props) {
+  const formatDurationIntoMinutes = (numberOfSecs) => {
+    const minutes = Math.floor(numberOfSecs / 60)
+    const seconds = numberOfSecs % 60
+    return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds
+  }
+
+  const { duration } = props
+  return (
+    <span>{duration === 0 ? <span>Busted!</span> : formatDurationIntoMinutes(duration)}</span>
+  )
+}
+
+

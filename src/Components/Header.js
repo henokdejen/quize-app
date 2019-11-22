@@ -20,7 +20,7 @@ export default function Header(props) {
                     </div>
                 </Col>
                 <Col className="gutter-row" lg={4} md = {12}>
-                        <Timer duration={40} />
+                        <Timer duration={140} />
                 </Col>
                 <Col className="gutter-row" lg={8} md = {24}>
                         Correct: {correctAnswersCount}   Wrong: {wrongAnswersCount}

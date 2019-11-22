@@ -5,7 +5,7 @@ import Choices from './Choices'
 import { PresentationMode, ChoiceType } from './Constants'
 import ActionZone from './ActionZone'
 import AnswerDescription from './AnswerDescriptio'
-import { Row, Col } from 'antd'
+import { Row, Col,notification } from 'antd'
 
 export default class QuizeBody extends React.Component {
 
@@ -43,6 +43,20 @@ export default class QuizeBody extends React.Component {
     }
 
     flipPresentatonMode() {
+
+        if (this.state.mode === PresentationMode.ask && this.state.selectedIndexes.length === 0) {
+            notification.error({
+                message: 'Erorr',
+                description:
+                    'please select a choice',
+                onClick: () => {
+                    console.log('Notification Clicked!');
+                },
+            });
+
+            return
+        }
+
         // on Flip
         this.setState(
             (state) => {
@@ -65,9 +79,9 @@ export default class QuizeBody extends React.Component {
         return (
             <div>
                 <div>
-                    <Row className = "quize-body">
-                        <Col md = {1} xs = {1} lg = {4} sm = {1}/>
-                        <Col md = {22} lg = {16} xs = {22} sm = {22}>
+                    <Row className="quize-body">
+                        <Col md={1} xs={1} lg={4} sm={1} />
+                        <Col md={22} lg={16} xs={22} sm={22}>
                             <QuestionTitle questionTitle={questionTitle} index={index + 1} />
                             <Choices
                                 choices_list={choicesList}
@@ -82,7 +96,7 @@ export default class QuizeBody extends React.Component {
                                 (this.state.mode === PresentationMode.check) && <AnswerDescription desc={answerDesc} />
                             }
                         </Col>
-                        <Col md = {1} xs = {1} lg = {4} sm = {1}/>
+                        <Col md={1} xs={1} lg={4} sm={1} />
                     </Row>
 
 
