@@ -1,4 +1,5 @@
 import React from 'react'
+import {PresentationMode} from './Constants'
 
 export default class Choice extends React.Component {
 
@@ -8,7 +9,7 @@ export default class Choice extends React.Component {
     }
 
     onSelected(){
-        if (this.props.mode !== "check") {
+        if (this.props.mode !== PresentationMode.check) {
             this.props.onChoiceSelected(this.props.index)
         }
     }
@@ -17,7 +18,7 @@ export default class Choice extends React.Component {
         const {isSelected, choiceText, correct, mode} = this.props
         let className = "choice-item "
 
-        if (mode === 'check') className += correct ? 'choice-item-correct' : isSelected ? 'choice-item-wrong':'choice-item-unselected'
+        if (mode === PresentationMode.check) className += correct ? 'choice-item-correct' : isSelected ? 'choice-item-wrong':'choice-item-unselected'
         else className += isSelected ? 'choice-item-selected' : 'choice-item-unselected'
 
         return (
