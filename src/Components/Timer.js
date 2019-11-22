@@ -30,7 +30,7 @@ export default class Timer extends React.Component {
     this.setState((state) => ({
       duration: state.duration - 1
     }), () => {
-      if (this.state.duration == 0) {
+      if (this.state.duration === 0) {
         clearInterval(this.timerId)
         this.props.onElapsed()
       }
@@ -41,7 +41,7 @@ export default class Timer extends React.Component {
   render() {
     const {duration} = this.state
     return (
-      <span>{duration == 0 ? <span>Busted!</span>  : this.formatDurationIntoMinutes(duration)}</span>
+      <span>{duration === 0 ? <span>Busted!</span>  : this.formatDurationIntoMinutes(duration)}</span>
     )
   }
 }
