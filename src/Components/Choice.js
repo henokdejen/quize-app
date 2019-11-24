@@ -1,31 +1,27 @@
 import React from 'react'
-import {PresentationMode} from './Constants'
+import { PresentationMode } from './Constants'
 
-export default class Choice extends React.Component {
+const Choice = props => {
+    // const onSelected = this.onSelected.bind(this)
 
-    constructor(props) {
-        super(props)
-        this.onSelected = this.onSelected.bind(this)
-    }
-
-    onSelected(){
-        if (this.props.mode !== PresentationMode.check) {
-            this.props.onChoiceSelected(this.props.index)
+    const onSelected = () => {
+        if (props.mode !== PresentationMode.check) {
+            props.onChoiceSelected(props.index)
         }
     }
+    const { isSelected, choiceText, correct, mode } = props
+    let className = "choice-item "
 
-    render() {
-        const {isSelected, choiceText, correct, mode} = this.props
-        let className = "choice-item "
+    if (mode === PresentationMode.check) className += correct ? 'choice-item-correct' : isSelected ? 'choice-item-wrong' : 'choice-item-unselected'
+    else className += isSelected ? 'choice-item-selected' : 'choice-item-unselected'
 
-        if (mode === PresentationMode.check) className += correct ? 'choice-item-correct' : isSelected ? 'choice-item-wrong':'choice-item-unselected'
-        else className += isSelected ? 'choice-item-selected' : 'choice-item-unselected'
+    const content = (
+        <div onClick={onSelected} className={className} >
+            {choiceText}
+        </div>
+    )
 
-        return (
-            <div onClick = {this.onSelected} className = {className} >
-                {choiceText}
-            </div>
-        )
-    }
-
+    return content
 }
+
+export default Choice

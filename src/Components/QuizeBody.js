@@ -48,7 +48,7 @@ export default class QuizeBody extends React.Component {
             notification.error({
                 message: 'Erorr',
                 description:
-                    'please select a choice',
+                    'please select ',
                 onClick: () => {
                     console.log('Notification Clicked!');
                 },
