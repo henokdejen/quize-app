@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/henokdejen/quize-app/static/css/main.ccd8118c.chunk.css",
-    "main.js": "/henokdejen/quize-app/static/js/main.bd17de45.chunk.js",
-    "main.js.map": "/henokdejen/quize-app/static/js/main.bd17de45.chunk.js.map",
-    "runtime-main.js": "/henokdejen/quize-app/static/js/runtime-main.59f832e0.js",
-    "runtime-main.js.map": "/henokdejen/quize-app/static/js/runtime-main.59f832e0.js.map",
-    "static/css/2.fb9ed26a.chunk.css": "/henokdejen/quize-app/static/css/2.fb9ed26a.chunk.css",
-    "static/js/2.2b5ecf04.chunk.js": "/henokdejen/quize-app/static/js/2.2b5ecf04.chunk.js",
-    "static/js/2.2b5ecf04.chunk.js.map": "/henokdejen/quize-app/static/js/2.2b5ecf04.chunk.js.map",
-    "index.html": "/henokdejen/quize-app/index.html",
-    "precache-manifest.356d9c7913e1d5cd06da88d2c006bec1.js": "/henokdejen/quize-app/precache-manifest.356d9c7913e1d5cd06da88d2c006bec1.js",
-    "service-worker.js": "/henokdejen/quize-app/service-worker.js",
-    "static/css/2.fb9ed26a.chunk.css.map": "/henokdejen/quize-app/static/css/2.fb9ed26a.chunk.css.map",
-    "static/css/main.ccd8118c.chunk.css.map": "/henokdejen/quize-app/static/css/main.ccd8118c.chunk.css.map"
+    "main.css": "/quize-app/static/css/main.ccd8118c.chunk.css",
+    "main.js": "/quize-app/static/js/main.6e567006.chunk.js",
+    "main.js.map": "/quize-app/static/js/main.6e567006.chunk.js.map",
+    "runtime-main.js": "/quize-app/static/js/runtime-main.73422133.js",
+    "runtime-main.js.map": "/quize-app/static/js/runtime-main.73422133.js.map",
+    "static/css/2.fb9ed26a.chunk.css": "/quize-app/static/css/2.fb9ed26a.chunk.css",
+    "static/js/2.5603d6dc.chunk.js": "/quize-app/static/js/2.5603d6dc.chunk.js",
+    "static/js/2.5603d6dc.chunk.js.map": "/quize-app/static/js/2.5603d6dc.chunk.js.map",
+    "index.html": "/quize-app/index.html",
+    "precache-manifest.3ae72d0cb5d76b177f6a515eb4b3940b.js": "/quize-app/precache-manifest.3ae72d0cb5d76b177f6a515eb4b3940b.js",
+    "service-worker.js": "/quize-app/service-worker.js",
+    "static/css/2.fb9ed26a.chunk.css.map": "/quize-app/static/css/2.fb9ed26a.chunk.css.map",
+    "static/css/main.ccd8118c.chunk.css.map": "/quize-app/static/css/main.ccd8118c.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.59f832e0.js",
+    "static/js/runtime-main.73422133.js",
     "static/css/2.fb9ed26a.chunk.css",
-    "static/js/2.2b5ecf04.chunk.js",
+    "static/js/2.5603d6dc.chunk.js",
     "static/css/main.ccd8118c.chunk.css",
-    "static/js/main.bd17de45.chunk.js"
+    "static/js/main.6e567006.chunk.js"
   ]
 }
