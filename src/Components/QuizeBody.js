@@ -57,6 +57,10 @@ export default class QuizeBody extends React.Component {
             return
         }
 
+        if (this.state.mode === PresentationMode.check){
+            var isCorrect = this.props.question.answersList[0] == this.state.selectedIndexes[0]
+        }
+        
         // on Flip
         this.setState(
             (state) => {
@@ -65,10 +69,20 @@ export default class QuizeBody extends React.Component {
             },
             () => {
                 if (this.state.mode === PresentationMode.ask) {
-                    this.props.onAQuestionFinished(true)
+                    this.props.onAQuestionFinished(isCorrect)
                 }
             }
         )
+    }
+
+    areSimilar(arr1, arr2){
+        if (arr1.length === arr2.length) {
+            for (let element in arr1) {
+                if (!(arr2.includes(element))) return false
+            }
+            return true
+        }
+        return false
     }
 
 
@@ -76,12 +90,13 @@ export default class QuizeBody extends React.Component {
         const { questionTitle, choicesList, choiceType, answersList, answerDesc } = this.props.question
         const { index } = this.props
 
+        const answers = answersList.map(answer => choicesList[answer])
         return (
             <div>
                 <div>
                     <Row className="quize-body">
-                        <Col md={1} xs={1} lg={4} sm={1} />
-                        <Col md={22} lg={16} xs={22} sm={22}>
+                        <Col md={1} xs={1} lg={5} sm={1} />
+                        <Col md={22} lg={14} xs={22} sm={22}>
                             <QuestionTitle questionTitle={questionTitle} index={index + 1} />
                             <Choices
                                 choices_list={choicesList}
@@ -93,10 +108,10 @@ export default class QuizeBody extends React.Component {
                             />
 
                             {
-                                (this.state.mode === PresentationMode.check) && <AnswerDescription desc={answerDesc} />
+                                (this.state.mode === PresentationMode.check) && <AnswerDescription desc={answerDesc} answers = {answers}/>
                             }
                         </Col>
-                        <Col md={1} xs={1} lg={4} sm={1} />
+                        <Col md={1} xs={1} lg={5} sm={1} />
                     </Row>
 
 

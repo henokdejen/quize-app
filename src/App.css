@@ -68,6 +68,28 @@
   border-bottom: 1px solid rgb(235, 237, 240)
 }
 
+.page-header-back {
+  float: left;
+  margin: 8px 0;
+  margin-right: 16px;
+  font-size: 16px;
+  line-height: 1;
+}
+.page-header-back:hover {
+  cursor: pointer;
+  color: #247cc4;
+}
+.page-header-heading-title {
+  display: block;
+  float: left;
+  margin-bottom: 0;
+  padding-right: 12px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+}
+
 .quize-body{
   margin: auto;
   text-align: left;
@@ -83,4 +105,8 @@
   padding: 24px;
   text-align: center;
   border-top: 1px solid rgb(235, 237, 240)
+}
+
+.answer_wrapper {
+  margin: 40px 0px
 }

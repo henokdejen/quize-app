@@ -1,9 +1,17 @@
 import React from 'react'
 
+import { Typography } from 'antd';
+
+const { Title } = Typography;
+
 export default function AnswerDescription(props) {
-    const {desc} = props
+    const {answers, desc} = props
     return (
-        <div>
+        <div className = "answer_wrapper">
+            <Title level = {4}> Answer: </Title>
+            {answers}
+
+            <Title level = {4}> Description: </Title>
             {desc}
         </div>
     )

@@ -38,7 +38,6 @@ export default class Timer extends React.Component {
     const { duration } = this.state
     const { timerType } = this.props
 
-    console.log(duration)
     return (
       (timerType === TimerType.circular) ?
         <CircularCountDown
@@ -54,7 +53,6 @@ export default class Timer extends React.Component {
 function CircularCountDown(props) {
   const { duration, initialDuration } = props
 
-  console.log(duration, initialDuration)
   return (
     <Progress 
     type="circle" 

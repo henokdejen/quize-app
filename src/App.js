@@ -3,7 +3,7 @@ import './App.css';
 
 import QuizeBody from './Components/QuizeBody'
 import Header from './Components/Header'
-import questions from './Models/Questions'
+import quizes from './Models/Questions'
 
 
 class App extends Component {
@@ -17,6 +17,8 @@ class App extends Component {
     }
 
     this.onAQuestionFinished = this.onAQuestionFinished.bind(this)
+
+    this.quize = quizes["quize"]
   }
 
   onSelected(index) {
@@ -24,25 +26,30 @@ class App extends Component {
   }
 
   onAQuestionFinished(isCorrect) {
+    console.log(isCorrect)
     const updateField = isCorrect ? 'correct' : 'wrong'
     this.setState(
       (state) => ({
         currentIndex: state.currentIndex + 1,
-        updateField: state[updateField] + 1
-      })
+        [updateField]: state[updateField] + 1
+      }),
+      () => {
+        console.log(this.state)
+      }
     )
+
   }
 
   render() {
     const {currentIndex,correct, wrong} = this.state
-    const currentQuestion = questions[currentIndex]
+    const currentQuestion =  this.quize.questions[currentIndex]
 
     return (
       <div className="App">
         <Header
-          quizeTitle={currentQuestion.questionTitle}
+          quizeTitle={this.quize.title}
           currentQuestionNumber={currentIndex + 1}
-          totalNumberOfQuestions={questions.length} 
+          totalNumberOfQuestions={this.quize.questions.length} 
           correctAnswersCount = {correct}
           wrongAnswersCount = {wrong}
           />
