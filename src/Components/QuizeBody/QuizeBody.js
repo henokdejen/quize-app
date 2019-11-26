@@ -1,11 +1,13 @@
 import React from 'react'
 
-import QuestionTitle from './QuestionTitle'
-import Choices from './Choices'
-import { PresentationMode, ChoiceType } from './Constants'
-import ActionZone from './ActionZone'
-import AnswerDescription from './AnswerDescriptio'
+import QuestionTitle from '../QuestionTitle'
+import Choices from '../Choices'
+import { PresentationMode, ChoiceType } from '../Constants'
+import ActionZone from '../ActionZone'
+import AnswerDescription from '../AnswersDescription/AnswerDescriptio'
 import { Row, Col,notification } from 'antd'
+
+import './quizeBody.css'
 
 export default class QuizeBody extends React.Component {
 

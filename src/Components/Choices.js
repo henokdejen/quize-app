@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Choice from './Choice'
+import Choice from './Choice/Choice'
 
 export default function Choices(props) {
 

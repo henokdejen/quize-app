@@ -1,5 +1,7 @@
 import React from 'react'
-import { PresentationMode } from './Constants'
+import { PresentationMode } from '../Constants'
+
+import './choice.css'
 
 const Choice = props => {
     // const onSelected = this.onSelected.bind(this)

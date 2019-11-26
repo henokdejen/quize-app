@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import QuizeBody from './Components/QuizeBody'
+import QuizeBody from './Components/QuizeBody/QuizeBody'
 import Header from './Components/Header'
 import quizes from './Models/Questions'
+import QuizeCategory from './Components/QuizeGeneralInfo/QuizeCategory';
+import QuizzesList from './pages/quizzeses';
 
 
 class App extends Component {
@@ -28,6 +30,10 @@ class App extends Component {
   onAQuestionFinished(isCorrect) {
     console.log(isCorrect)
     const updateField = isCorrect ? 'correct' : 'wrong'
+    if (this.state.currentIndex === this.quize.questions.length){
+      console.log("Quize Finished!")
+      return
+    }
     this.setState(
       (state) => ({
         currentIndex: state.currentIndex + 1,
@@ -44,9 +50,11 @@ class App extends Component {
     const {currentIndex,correct, wrong} = this.state
     const currentQuestion =  this.quize.questions[currentIndex]
 
+
     return (
       <div className="App">
-        <Header
+        <QuizzesList/>
+        {/* <Header
           quizeTitle={this.quize.title}
           currentQuestionNumber={currentIndex + 1}
           totalNumberOfQuestions={this.quize.questions.length} 
@@ -57,7 +65,7 @@ class App extends Component {
         <QuizeBody
           index={currentIndex}
           onAQuestionFinished={this.onAQuestionFinished}
-          question={currentQuestion} />
+          question={currentQuestion} /> */}
       </div>
     );
   }

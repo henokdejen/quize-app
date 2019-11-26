@@ -1,0 +1,26 @@
+.choice-item {
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 4px;
+  }
+  
+  .choice-item-unselected {
+    background-color: #f1f1f1;
+  }
+  
+  .choice-item-selected {
+    background-color: #247cc4;
+    color: #fff;
+  }
+  
+  .choice-item-wrong {
+    background-color: #ff0000;
+    color: #fff;
+  
+  }
+  
+  .choice-item-correct {
+    background-color: #057a63;
+    color: #fff;
+  
+  }

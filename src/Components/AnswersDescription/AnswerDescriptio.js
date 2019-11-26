@@ -1,6 +1,7 @@
 import React from 'react'
-
 import { Typography } from 'antd';
+
+import './answersDescription.css'
 
 const { Title } = Typography;
 
