@@ -1,0 +1,36 @@
+.quize-list-item-wrapper {
+    overflow: hidden;
+    display: flex;
+    padding: 12px 30px 12px 30px;
+    background-color: #fff;
+    border: 1px solid #e8e9eb;
+    border-top: none;
+    color: #686f7a;
+    letter-spacing: .3px;
+    line-height: 1.33;
+    font-size: 16px;
+}
+
+
+.quize-list-item-title {
+    width: 60%;
+    float: left;
+    text-align:  left;
+}
+
+.quize-list-item-title a:hover {
+    color: #000000
+}
+
+.quize-list-item-title a{
+    color: #007791;
+}
+
+.quize-list-item-details {
+    width: 40%;
+    float: left;
+    text-align: right;
+    color: #007791;
+
+}
+

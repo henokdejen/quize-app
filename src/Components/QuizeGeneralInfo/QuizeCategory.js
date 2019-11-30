@@ -12,11 +12,10 @@ function QuizeCategory(props) {
 
     return (
         <Card
-            style={{ width: 300 }}
             cover={
                 <img
                     src={imageUrl}
-                    alt="Quize Image"
+                    alt="Quize"
                     className = "quize-general-info-image"
                 />
             }

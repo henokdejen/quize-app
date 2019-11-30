@@ -3,4 +3,5 @@
     text-align: left;
     margin-top: 20px;
     align-self: center;
+    overflow-y: scroll;
   }

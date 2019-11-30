@@ -65,12 +65,38 @@
 
 .action-zone {
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   padding: 24px;
   text-align: center;
   border-top: 1px solid rgb(235, 237, 240)
+}
+
+.action-zone button {
+  width: 250px;
+}
+
+
+.quize-page-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.quize-page-top{
+  margin-bottom: 10%;
+  vertical-align: auto;
+}
+
+.quize-page-bottom{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  max-height: 10%;
+  bottom: 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.quize-page-start-count-down{
+  margin-top: 100px;
 }
 
 
@@ -81,11 +107,10 @@
 
 .quizzes-list-wrapper{
   display: inline-block;
-  text-align: center;
+  text-align: left;
   margin: auto;
   overflow: hidden;
-  align-self: center;
-  width: 90%;
+  width: 85%;
   margin-top: 20px;
 }
 

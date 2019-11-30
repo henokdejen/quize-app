@@ -1,9 +1,9 @@
 import React from 'react'
-import { PageHeader, Skeleton } from 'antd';
+import { PageHeader, Typography } from 'antd';
 import QuizeCategory from '../Components/QuizeGeneralInfo/QuizeCategory';
 
-
-function QuizzesList(props) {
+const {Title} = Typography;
+function QuizzeCategoriesListPage(props) {
     const imgUrl = "https://i.udemycdn.com/course/480x270/1362070_b9a1_2.jpg"
 
     return (
@@ -16,7 +16,7 @@ function QuizzesList(props) {
                 title="Henok Quizzes"
             />
             <div className="quizzes-list-wrapper">
-                <div>15 Quizes</div>
+                <Title level = {4}>15 Quizes</Title>
                 {
                     [1, 2, 3, 4, 5, 6, 7, 8].map(element =>
                         <QuizeCategory
@@ -36,5 +36,5 @@ function QuizzesList(props) {
     )
 }
 
-export default QuizzesList
+export default QuizzeCategoriesListPage
 
